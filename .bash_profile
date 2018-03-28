@@ -1,0 +1,2 @@
+# Use ~/.bashrc commands
+. ~/.bashrc
