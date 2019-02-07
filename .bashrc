@@ -1,5 +1,14 @@
-# ~/.bashrc: executed by bash(1) for non-login shells
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
+# for the workaround in WSL network hosts resolution
+# comment out if using normal linux
+sudo /bin/cp -rf $PWD/.myresolv.conf /etc/resolv.conf
+
+# update the PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -91,3 +100,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Connect to Docker on Windows
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST='tcp://127.0.0.1:2375'
