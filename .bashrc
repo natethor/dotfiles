@@ -6,7 +6,7 @@ esac
 
 # for the workaround in WSL network hosts resolution
 # comment out if using normal linux
-sudo /bin/cp -rf $PWD/.myresolv.conf /etc/resolv.conf
+sudo /bin/cp -rf ~/.myresolv.conf /etc/resolv.conf
 
 # update the PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
