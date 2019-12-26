@@ -28,8 +28,8 @@ if [ -f ~/.dircolors ]; then
 fi
 
 # create symbolic links
-ln -s ~/repos/dotfiles/.bashrc ~/
-ln -s ~/repos/dotfiles/.bash_profile ~/
-ln -s ~/repos/dotfiles/.bash_aliases ~/
-ln -s ~/repos/dotfiles/.bash_exports ~/
-ln -s ~/repos/dotfiles/.dircolors ~/
+ln -s ~/dotfiles/.bashrc ~/
+ln -s ~/dotfiles/.bash_profile ~/
+ln -s ~/dotfiles/.bash_aliases ~/
+ln -s ~/dotfiles/.bash_exports ~/
+ln -s ~/dotfiles/.dircolors ~/
