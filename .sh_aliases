@@ -11,3 +11,9 @@ alias less='less -R'
 alias dd='dd status=progress'
 
 alias repos='cd ~/repos; la'
+
+# docker aliases
+alias dcp='docker-compose -f /opt/docker-compose.yml '
+alias dcpull='docker-compose -f /opt/docker-compose.yml pull'
+alias dclogs='docker-compose -f /opt/docker-compose.yml logs -tf --tail="50" '
+alias dtail='docker logs -tf --tail="50" "$@"'
