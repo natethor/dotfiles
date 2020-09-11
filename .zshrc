@@ -15,9 +15,12 @@ plugins=(
   git
   aws
   dotenv
+  fzf
   osx
+  dirhistory
   docker
   docker-compose
+  history
   kubectl
   node
   npm
@@ -26,6 +29,7 @@ plugins=(
   python
   terraform
   vscode
+  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -35,4 +39,12 @@ if [ -f ~/.sh_aliases ]; then
     . ~/.sh_aliases
 fi
 
+# add zsj amd fzf completion
+source $HOME/repos/ohmyzsh/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+zstyle ':completion:*' fzf-search-display true
+
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# uncomment only if needed when installed on OSX via homebrew
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
