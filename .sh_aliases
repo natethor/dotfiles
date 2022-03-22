@@ -2,11 +2,12 @@ alias gti='git'
 alias dc='cd'
 
 # some ls aliases
-alias ll='ls -lh'
-alias l='ls -CF'
-alias la='ls -lah'
+alias ls="exa --icons --group-directories-first"
+alias ll="exa --icons --group-directories-first -l"
+alias la="exa --icons --group-directories-first -la"
+alias lt="exa --icons --group-directories-first -T"
+alias lt2="exa --icons --group-directories-first -T --level=2"
 
-alias em='emacs -nw'
 alias less='less -R'
 alias dd='dd status=progress'
 
