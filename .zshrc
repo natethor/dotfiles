@@ -1,5 +1,5 @@
 # Path to oh-my-zsh installation
-export ZSH=$HOME/repos/ohmyzsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -16,7 +16,7 @@ plugins=(
   aws
   dotenv
   fzf
-  osx
+  macos
   dirhistory
   docker
   docker-compose
@@ -40,7 +40,7 @@ if [ -f ~/.sh_aliases ]; then
 fi
 
 # add zsj amd fzf completion
-source $HOME/repos/ohmyzsh/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+source $HOME/.oh-my-zsh/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 zstyle ':completion:*' fzf-search-display true
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
