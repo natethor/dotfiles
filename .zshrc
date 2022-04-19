@@ -1,9 +1,6 @@
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
@@ -39,10 +36,20 @@ if [ -f ~/.sh_aliases ]; then
     . ~/.sh_aliases
 fi
 
+# Fix Interop Error that randomly occurs in vscode terminal when using WSL2
+fix_wsl2_interop() {
+    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
+        if [[ -e "/run/WSL/${i}_interop" ]]; then
+            export WSL_INTEROP=/run/WSL/${i}_interop
+        fi
+    done
+}
+
 # add zsj amd fzf completion
 source $HOME/.oh-my-zsh/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 zstyle ':completion:*' fzf-search-display true
 
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # uncomment only if needed when installed on OSX via homebrew
